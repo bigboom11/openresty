@@ -31,12 +31,35 @@ The bundled software components are copyrighted by the respective copyright hold
 
 The homepage for this project is on [openresty.org](https://openresty.org/).
 
+Description
+===========
+
+You can add the openresty repository to your CentOS system so as to easily install our packages and receive updates in the future (via the yum update command). To add the repository, just run the following commands (replace yum with dnf below if you are using CentOS 8+):
+
+
 For Users
 ---------
 
 Visit the [download page](https://openresty.org/en/download.html) on the `openresty.org` web site
 to download the latest bundle tarball, and
 follow the installation instructions in the [installation page](https://openresty.org/en/installation.html).
+
+CentOS
+----------------------
+
+You can add the openresty repository to your CentOS system so as to easily install our packages and receive updates in the future (via the yum update command). To add the repository, just run the following commands (replace yum with dnf below if you are using CentOS 8+):
+
+```bash
+# add the yum repo:
+wget https://openresty.org/package/centos/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# update the yum index:
+sudo yum check-update
+
+# Then you can install a package, say, openresty, like this:
+sudo yum install openresty
+```
 
 For Bundle Maintainers
 ----------------------
